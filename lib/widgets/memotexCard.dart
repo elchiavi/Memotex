@@ -35,7 +35,7 @@ class _MemotexCardState extends State<MemotexCard> {
           if (indexProvider.indexOfFaceUpCard != 99 && widget.listCard[indexProvider.indexOfFaceUpCard].isFaceUp && !widget.listCard[widget.index].isFaceUp){
             widget.listCard[widget.index].isFaceUp = true;
             if (widget.listCard[widget.index].content == widget.listCard[indexProvider.indexOfFaceUpCard].content && widget.index != indexProvider.indexOfFaceUpCard) {
-              new Future.delayed(const Duration(milliseconds: 300), () {
+              new Future.delayed(const Duration(milliseconds: 200), () {
                 widget.listCard[widget.index].isMatched = true;
                 widget.listCard[indexProvider.indexOfFaceUpCard].isMatched = true;
                 indexProvider.indexOfFaceUpCard = 99;
@@ -43,7 +43,7 @@ class _MemotexCardState extends State<MemotexCard> {
                 if (indexProvider.matchedUpCount == widget.listCard.length) {
                   indexProvider.matchedUpCount = 0;
                   final gameTime = DateTime.now().difference(widget.now);
-                  alertDialog(context, "Tu tiempo fue: " + gameTime.inSeconds.toString() + " segundos."); 
+                  alertDialog(context, "Tu tiempo fue: " + gameTime.inSeconds.toString() + " segundos.");
                   
               }});           
             } else {
@@ -68,7 +68,8 @@ class _MemotexCardState extends State<MemotexCard> {
       },
       child: widget.listCard[widget.index].isFaceUp && widget.listCard[widget.index].isMatched 
       ? Container()
-      : TemplateCard(theme: widget.theme, index: widget.index, listCard: widget.listCard),
+      : TemplateCard(theme: widget.theme, index: widget.index, listCard: widget.listCard)
     );
   }
+  
 }

@@ -22,7 +22,10 @@ class TemplateCard extends StatelessWidget {
       child: Center(
         child: listCard[index].isFaceUp
           ? Text(theme.emojis[index], style: TextStyle(fontSize: 50),)
-          : Container()
+          : RotationTransition(turns: AlwaysStoppedAnimation(320 / 360), 
+            child: Text("Memotex", style: TextStyle(color: Colors.white)),
+            
+            )
           )
       ,
       padding: EdgeInsets.all(5),

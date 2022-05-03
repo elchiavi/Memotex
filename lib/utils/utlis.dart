@@ -19,7 +19,15 @@ void alertDialog(BuildContext context, String mensaje) {
                         onPrimary: Colors.white, // foreground
               ),
               onPressed: () => Navigator.pushNamedAndRemoveUntil(context, 'selectTheme', (route) => false), 
-              child: Text('Juegar de nuevo'))
+              child: Text('Juegar de nuevo')
+            ),            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                        primary: Colors.indigo, // background
+                        onPrimary: Colors.white, // foreground
+              ),
+              onPressed: () => Navigator.pushNamedAndRemoveUntil(context, 'ranking', (route) => true), 
+              child: Text('Ver Ranking')
+            )
           ],
         );
       });
@@ -35,6 +43,11 @@ void alertDialog(BuildContext context, String mensaje) {
                 isDefaultAction: true,
                 child: Text('Juegar de nuevo'),
                 onPressed: () => Navigator.pushNamedAndRemoveUntil(context, 'selectTheme', (route) => false), 
+              ),
+              CupertinoDialogAction(
+                isDefaultAction: true,
+                child: Text('Ver Ranking'),
+                onPressed: () => Navigator.pushNamedAndRemoveUntil(context, 'ranking', (route) => true), 
               ),
             ],
           );

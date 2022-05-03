@@ -22,4 +22,5 @@ class IndexCardProvider extends ChangeNotifier {
     this._matchedUpCount = i;
     notifyListeners(); 
   }
+
 }

@@ -6,8 +6,8 @@ String cardModelToJson(CardModel data) => json.encode(data.toJson());
 
 class CardModel {
     CardModel({
-        this.isFaceUp,
-        this.isMatched,
+        this.isFaceUp = false,
+        this.isMatched = false,
         this.content,
     });
 

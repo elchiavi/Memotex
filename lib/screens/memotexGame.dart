@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 import 'package:memotex/widgets/memotexCard.dart';
 import 'package:memotex/models/cardModel.dart';
 import 'package:memotex/models/themeModel.dart';
@@ -37,7 +38,7 @@ class MemotexGame extends StatelessWidget {
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
           children: List.generate(theme.numbersOfPairs*2, (index) {
-            final card = new CardModel(isFaceUp: false, isMatched: false, content: theme.emojis[index]);
+            final card = new CardModel(content: theme.emojis[index]);
             listCard.add(card);
             theme.emojis.add(theme.emojis[index]);
             return MemotexCard(theme: theme, index: index, listCard: listCard, now: now);

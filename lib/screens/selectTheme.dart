@@ -25,8 +25,8 @@ class SelectTheme extends StatelessWidget {
         backgroundColor: Colors.deepPurpleAccent,
         actions: [
           IconButton(
-              icon: Icon(Icons.add, size: 25.0),
-              onPressed: () {}
+              icon: Icon(Icons.military_tech_outlined, size: 25.0),
+              onPressed: () => Navigator.pushNamed(context, 'ranking')
           ),
         ],
       ),
